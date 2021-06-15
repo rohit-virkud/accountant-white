@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accountant</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Roboto', sans-serif;
+		}
+		h1,p{
+			word-break: break-word;
+		}
+		.card-wrapper
+		{
+			background: linear-gradient(192.05deg, #FFFFFF -0.96%, #F1ECF6 96.26%);
+			width: 100%;
+			min-height: 100vh;
+			overflow: hidden;
+		}
+		.hero-section
+		{
+			width: 100%;
+			min-height: 35vh;
+		
+			display: flex;
+			flex-shrink: 0;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.logo-wrapper
+		{
+			margin-top: min(10.628vw,5.2vh);
+           background-color: black;
+           height: min(35.749vw,17.5vh);
+           width: min(35.749vw,17.5vh);
+           border-radius: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-shrink: 0;
+           overflow: hidden;
+           border: 3px solid #FFFFFF;
+		   box-sizing: border-box;
+		   box-shadow: 0px 6px 20px rgba(39, 102, 130, 0.25);
+
+       }
+		.logo
+		{
+			background-size: contain;
+			width: min(14vw,7vh);
+		}
+		.name
+		{
+			width: 90%;
+			
+			font-size: min(7.2vw,3.3vh);
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: bold;
+			font-weight: 700;
+			line-height: min(8vw,3.5vh);
+			/*word-break: break-all;
+			  */
+
+			text-align: center;
+
+		}
+		.first
+		{
+			margin-top: min(5vw,2.5vh);
+		}
+
+		.tag
+		{
+			width: 90%;
+			text-align: center;
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: 900;
+			font-size: min(3vw,1.4vh);
+			
+			letter-spacing: 0.1em;
+            margin-top: min(2vw,1vh);
+			color: #5F5F5F;
+			/*word-break: break-all;*/
+
+		}
+		.save-btn
+		{
+			background: #99F3FF;
+			border: 2px solid #FFFFFF;
+			box-sizing: border-box;
+			padding-top: min(2vw,1vh);
+			padding-bottom: min(2vw,1vh);
+			padding-left: min(4vw,2vh);
+			padding-right: min(4vw,2vh);
+			box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
+			border-radius: min(6.039vw,3vh);
+			color:black;
+			font-style: normal;
+			font-weight: bold;
+			font-size: min(4vw,2vh);
+			text-decoration: none;
+			margin-top: min(5vw,2vh);
+
+		}
+		.social-wrapper
+		{
+			width: 100%;
+			display: flex;
+		    flex-shrink: 0;
+		    justify-content: center;
+		   
+		}
+
+		.social-section
+		{
+			width: 70%;
+		    height: min(12vw,6vh);
+		    margin-top: min(3vw,1.5vh);
+		    display: flex;
+		    flex-shrink: 0;
+		    justify-content: space-evenly;
+		    align-items: center;
+		}
+		.social-section img
+		{
+			background-size: contain;
+		}
+		.contact-section
+		{
+			width: 100%;
+			
+			display: flex;
+			justify-content: center;
+		}
+		.contact-box
+		{
+			width: 80%;
+			padding-top: min(4vw,2vh);
+			padding-bottom: 10vw;
+			background: #FFFFFF;
+			box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
+			border-radius: min(6vw,3vh);
+			margin-top: min(3vw,1.5vh);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.contact-container
+		{
+			width: 80%;
+			display: flex;
+			margin-top: min(6.5vw,3vh);
+			flex-shrink: 0;
+			font-size: min(6vw,2vh);
+			align-items: center;
+		}
+		.contact-container img
+		{
+			width: min(8vw,4vh);
+			height: min(8vw,4vh);
+		}
+
+		.reviews-section
+		{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			flex-shrink: 0;
+			justify-content: center;
+			align-items: center;
+		}
+		.review-icons
+		{
+			margin-top: min(5vw,2.5vh);
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-shrink: 0;
+			align-items: center;
+		}
+		.review-icons img
+		{
+			width: min(9vw,4vh);
+			height: min(9vw,4vh);
+		}
+		.sub-title
+		{
+			width: 90%;
+			font-size: min(7.2vw,3.3vh);
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: bold;
+			font-weight: 700;
+			line-height: min(8vw,3.5vh);
+			/*word-break: break-all;
+			  */
+		}
+		.subscribe-section
+		{
+			display: flex;
+			flex-direction: column;
+			width: 90%;
+		}
+		.input-title, .input-button
+		{
+			margin-left: min(15vw,7.5vh);
+			background: #FFFFFF;
+            border-radius: 4px;
+            margin-top: min(4vw,2vh);
+            padding: min(3vw,1.5vh);
+            font-size: min(3vw,1.5vh);
+            border: none;
+		}
+		.input-button
+		{
+			margin-left: 15vw;
+			background: #FFFFFF;
+            border-radius: 4px;
+            margin-top: min(4vw,2.5vh);
+            padding: min(3vw,1.5vh);
+            width: min(30vw,15vh);
+            font-size: min(3vw,1.5vh);
+            border: none;
+			background: #39B8FF;
+            box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
+            border-radius: 5px;
+	        color: white;
+	        font-weight: bold;
+	        margin-bottom: min(5vw,2.5vh);
+
+		}
+
+	</style>
+</head>
+<body>
+
+ <div class="card-wrapper">
+
+ 	<div class="hero-section">
+        
+        <div class="logo-wrapper">
+        	<img src="logo.png" alt="logo" class="logo">
+        </div>
+
+        	<h1 class="name first ">George</h1>
+        	<h1 class="name">Maksimov</h1>
+        	<p class="tag">ACCOUNTANT</p>
+            <a href="#!" class="save-btn">Save contact</a>
+    </div>
+
+
+    <div class="social-wrapper">
+	 	<div class="social-section">
+	 		<a href="#!"><img src="fb.png"></a>
+	 		<a href="#!"><img src="insta.png"></a>
+	 		<a href="#!"><img src="yt.png"></a>
+	 		<a href="#!"><img src="tel.png"></a>
+	 		<a href="#!"><img src="twit.png"></a>
+	 		<a href="#!"><img src="tiktok.png"></a>
+	 		<a href="#!"><img src="linkedin.png"></a>
+	 	</div>
+	</div>
+
+ 	<div class="contact-section">
+ 		<div class="contact-box">
+ 			
+ 			<div class="contact-container">
+ 				<img src="phone-icon.png">
+ 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh)">+91 8888306063</p>
+ 			</div>
+
+ 			<div class="contact-container">
+ 				<img src="home-icon.png">
+ 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh)">+91 8888306063</p>
+ 			</div>
+
+
+ 			<div class="contact-container">
+ 				<img src="msg-icon.png">
+ 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh)">info@artcoolcards.com</p>
+ 			</div>
+
+ 			<div class="contact-container">
+ 				<img src="location-icon.png">
+ 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh)">Lisikratous 88, Kallithea, 176 74, Athens, Greece</p>
+ 			</div>
+
+ 			<div class="contact-container">
+ 				<img src="web-icon.png">
+ 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh)">www.artcoolcards.com</p>
+ 			</div>
+
+
+
+ 		</div>
+ 	</div>
+
+ 	<div class="reviews-section">
+ 		<h1 class="name" style="margin-top: min(7.5vw,3.5vh)">Our Review</h1>
+ 		<div class="review-icons">
+ 			<img src="Tripadvisor.png">
+ 			<img src="booking-com.png" style="margin-left: min(3vw,1.5vh)">
+ 		</div>
+ 	</div>
+
+ 	<form class="subscribe-section">
+ 		<h1 class="sub-title" style="margin-top: min(15vw,7vh);margin-left: min(15vw,8vh)">Subscribe</h1>
+ 		<input type="text" name="name" class="input-title" placeholder="Name">
+ 		<input type="email" name="name" class="input-title" placeholder="Email">
+ 		<input type="submit" name="submit" class="input-button" style="margin-left: min(15vw,8vh)">
+
+ 	</form>
+ 	
+ </div>
+
+
+</body>
+</html>
