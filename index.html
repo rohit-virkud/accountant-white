@@ -3,7 +3,7 @@
 <head>
 	<title>Accountant</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap" rel="stylesheet">
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -34,7 +34,7 @@
 		}
 		.logo-wrapper
 		{
-			margin-top: min(10.628vw,5.2vh);
+		   margin-top: min(6vw,3vh);
            background-color: black;
            height: min(35.749vw,17.5vh);
            width: min(35.749vw,17.5vh);
@@ -103,7 +103,8 @@
 			border-radius: min(6.039vw,3vh);
 			color:black;
 			font-style: normal;
-			font-weight: bold;
+			font-weight: 500;
+
 			font-size: min(4vw,2vh);
 			text-decoration: none;
 			margin-top: min(5vw,2vh);
@@ -115,7 +116,8 @@
 			display: flex;
 		    flex-shrink: 0;
 		    justify-content: center;
-		   
+		    margin-top: min(1.5vw,0.8vh);
+		    margin-bottom: min(1.5vw,0.8vh);
 		}
 
 		.social-section
@@ -162,6 +164,10 @@
 			font-size: min(6vw,2vh);
 			align-items: center;
 		}
+		.contact-container p
+		{
+			font-weight: 300;
+		}
 		.contact-container img
 		{
 			width: min(8vw,4vh);
@@ -188,8 +194,8 @@
 		}
 		.review-icons img
 		{
-			width: min(9vw,4vh);
-			height: min(9vw,4vh);
+			width: min(10vw,5vh);
+			height: min(10vw,5vh);
 		}
 		.sub-title
 		{
@@ -218,16 +224,18 @@
             padding: min(3vw,1.5vh);
             font-size: min(3vw,1.5vh);
             border: none;
+            width: 80%;
+            border-radius: 1.5vw;
 		}
 		.input-button
 		{
-			margin-left: 15vw;
+			margin-left: min(15vw,8vh);
 			background: #FFFFFF;
             border-radius: 4px;
             margin-top: min(4vw,2.5vh);
             padding: min(3vw,1.5vh);
             width: min(30vw,15vh);
-            font-size: min(3vw,1.5vh);
+            font-size: min(4vw,2vh);
             border: none;
 			background: #39B8FF;
             box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
@@ -235,15 +243,47 @@
 	        color: white;
 	        font-weight: bold;
 	        margin-bottom: min(5vw,2.5vh);
+	        font-weight: 500;
 
 		}
+
+
+		/*arrow animation*/
+
+	 @keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+	    transform: translateY(0);
+	  }
+		40% {
+	    transform:translateY(-30px);
+	  }
+		60% {
+	    transform:translateY(-15px);
+	  }
+	}
+
+	.arrow {
+  position: fixed;
+  bottom: 2%;
+  right: 5%;
+  width: 5vw;
+  height: 5vw;
+  background: url('arrow.svg') no-repeat;
+  background-size: contain;
+}
+
+.bounce {
+  animation : bounce 2s infinite;
+}
+
+		/**/
 
 	</style>
 </head>
 <body>
 
  <div class="card-wrapper">
-
+    <div class="arrow bounce"></div>
  	<div class="hero-section">
         
         <div class="logo-wrapper">
@@ -274,7 +314,7 @@
  			
  			<div class="contact-container">
  				<img src="phone-icon.png">
- 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh)">+91 8888306063</p>
+ 				<p style="margin-left: min(4vw,2vh);font-size: min(3.8vw,2.3vh);">+91 8888306063</p>
  			</div>
 
  			<div class="contact-container">
