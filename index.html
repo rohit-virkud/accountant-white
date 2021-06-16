@@ -11,15 +11,42 @@
 			box-sizing: border-box;
 			font-family: 'Roboto', sans-serif;
 		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
 		h1,p{
 			word-break: break-word;
 		}
+
+
 		.card-wrapper
 		{
+			
+			
 			background: linear-gradient(192.05deg, #FFFFFF -0.96%, #F1ECF6 96.26%);
 			width: 100%;
 			min-height: 100vh;
 			overflow: hidden;
+			opacity: 1;
+			animation: bgInOut 5s;
+		}
+		@keyframes bgInOut {
+			 0% {
+				 transform: rotate(-45deg) scale(1.1);
+				 animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+			 33% {
+				 transform: rotate(0deg);
+			}
+			 50% {
+				 transform: rotate(0deg);
+			}
+			100% {
+				 transform: rotate(0deg);
+				 animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+			}
+			
 		}
 		.hero-section
 		{
@@ -174,6 +201,21 @@
 			height: min(8vw,4vh);
 		}
 
+		.share-btn
+		{
+			width: min(10vw,5vh);
+			height: min(10vw,5vh);
+			position: absolute;
+			top: 2%;
+			right: 5%;
+
+		}
+		.share-btn img
+		{
+			width: min(10vw,5vh);
+			height: min(10vw,5vh);
+		}
+
 		.reviews-section
 		{
 			width: 100%;
@@ -304,12 +346,102 @@
 
 
 
+/*logo round move animation ENDS*/
+
+/*after loader animation*/
+		.untitled__shutters {
+		 position: absolute;
+		 height: 150vmax;
+		 width: 150vmax;
+		 left: calc(50% - 75vmax);
+		 top: calc(50% - 75vmax);
+		 pointer-events: none;
+		 z-index: 2;
+		 animation: rotateFrame 8s linear;
+	    }
+	    .untitled__shutters:before, .untitled__shutters:after {
+		    content: '';
+		    position: absolute;
+		    height: 100%;
+		    width: 100%;
+		    left: 50%;
+		    transform: translate3d(
+		    	50%, 0, 0);
+		    background-color: #b3401a;
+		    pointer-events: auto;
+		}
+
+		.untitled__shutters:before {
+			 bottom: 50%;
+			 animation: openTop 5s;
+		}
+		@keyframes rotateFrame 
+		{
+			 0% {
+				 transform: rotate(0deg);
+			}
+			 100% {
+				 transform: rotate(180deg);
+
+
+			}
+		}
+
+
+	@keyframes openTop {
+	 0% {
+		 transform: translate3d(-50%, 0, 0);
+		 animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+	}
+	 40% {
+		 transform: translate3d(-50%, -65vmax, 0);
+		 animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+	}
+	100% {
+		 transform: translate3d(-50%, -65vmax, 0);
+		 animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+	}
+	
+}
+
+
+ .untitled__shutters:after {
+	 top: 50%;
+	 animation: openBottom 5s;
+}
+
+@keyframes openBottom {
+	 0% {
+		 transform: translate3d(-50%, 0, 0);
+		 animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+	}
+	 40% {
+		 transform: translate3d(-50%, 65vmax, 0);
+		 animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+	}
+	 100% {
+		 transform: translate3d(-50%, 65vmax, 0);
+		 animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+	}
+	
+}
+
+/*after loader animation ENDS*/
+
+
+
 
 	</style>
 </head>
 <body>
+	<div class="untitled__shutters"></div>
+ <div class="card-wrapper" style="overflow: hidden;">
+ 	
 
- <div class="card-wrapper">
+ 	<div class="share-btn">
+ 		<img src="share.png" alt="share">
+ 	</div>
+
     <div class="arrow bounce"></div>
  	<div class="hero-section">
         
@@ -387,6 +519,16 @@
  	</form>
  	
  </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <script type="text/javascript">
+ 	
+ 	setTimeout(function() {
+    $('.untitled__shutters').fadeOut('fast');
+}, 1200);
+
+
+ </script>
 
 
 </body>
