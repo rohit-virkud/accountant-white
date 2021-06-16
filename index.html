@@ -602,6 +602,9 @@
 <body>
  
     <div class="slide-wrapper" style="position: absolute;height: 100%;width: 100%;overflow-x: hidden;"> <!--  share screen  -->
+
+       <audio id="save" src="savecontact.mpeg"></audio>
+       <audio id="share" src="sharescreen.mpeg"></audio>
     
        <div class="share-slide" id="share-slide">
         <img src="closeicon.png" alt="close-icon"  class="close-icon" onclick="closeSlide()"  />
@@ -648,7 +651,7 @@
         	<h1 class="name first ">George</h1>
         	<h1 class="name">Maksimov</h1>
         	<p class="tag">ACCOUNTANT</p>
-            <a href="#!" class="save-btn">Save contact</a>
+            <a href="#!" class="save-btn" onclick="saveClicked()">Save contact</a>
     </div>
 
 
@@ -732,6 +735,15 @@
  	$('.card-wrapper').addClass('card-wrapper-anim');
 
 
+   
+    function saveClicked()
+    {
+    	var audio = document.getElementById("save");
+        audio.play();
+    }
+    
+
+
 
  	function openSlide() {
  	
@@ -739,6 +751,8 @@
  		  $(".share-slide").addClass("open");
  		  $('.share-slide').addClass('card-wrapper-anim');
  		  $('.card-wrapper').removeClass('card-wrapper-anim');
+ 		  var audio = document.getElementById("share");
+          audio.play();
  
     setTimeout(function() {
 	    $(".icon-grid").addClass("openx");
@@ -747,6 +761,7 @@
 	    $(".qr-code-container").addClass("openx");
 	    $(".close-icon").removeClass("closeAnim");
         $('.untitled__shutters').fadeOut('fast');
+        
      }, 1000);
   
   
@@ -755,6 +770,9 @@
     }
 
     function closeSlide() {
+
+    var audio = document.getElementById("share");
+    audio.play();
 
     $('.untitled__shutters').fadeIn('fast');
     setTimeout(function() {
