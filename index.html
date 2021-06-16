@@ -11,13 +11,11 @@
 			box-sizing: border-box;
 			font-family: 'Roboto', sans-serif;
 		}
-		body
-		{
-			width: 100vw;
-			height: 100%;
-			overflow-x: hidden;
-
-		}
+		html, body{
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+}
 		a{
 			text-decoration: none;
 			color: black;
@@ -40,7 +38,7 @@
 		}
 		@keyframes bgInOut {
 			 0% {
-				 transform: rotate(45deg) scale(1.5);
+				 transform: rotate(-45deg) scale(1.5);
 				 animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 				
 			}
@@ -53,7 +51,7 @@
 				
 			}
 			100% {
-				 transform: rotate(0deg);
+				 transform: rotate(0deg) scale(1);
 				 animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
 				  
 			}
@@ -141,7 +139,7 @@
 			border-radius: min(6.039vw,3vh);
 			color:black;
 			font-style: normal;
-			font-weight: 500;
+			font-weight: 300;
 
 			font-size: min(4vw,2vh);
 			text-decoration: none;
@@ -217,8 +215,8 @@
 			width: min(10vw,5vh);
 			height: min(10vw,5vh);
 			position: absolute;
-			top: 2%;
-			right: 5%;
+			top: 3%;
+			right: 6%;
 
 		}
 		.share-btn img
@@ -296,7 +294,7 @@
             box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
             border-radius: 5px;
 	        color: white;
-	        font-weight: bold;
+	      
 	        margin-bottom: min(5vw,2.5vh);
 	        font-weight: 500;
 	        border-radius: 1.5vw;
@@ -342,7 +340,7 @@
 	}
 	50% {
 		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-20px);
+		transform: translatey(-50px);
 	}
 	100% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
@@ -367,7 +365,7 @@
 		 left: calc(50% - 75vmax);
 		 top: calc(50% - 75vmax);
 		 pointer-events: none;
-		 z-index: 2;
+		 z-index: 3;
 		 animation: rotateFrame 8s linear;
 	    }
 	    .untitled__shutters:before, .untitled__shutters:after {
@@ -378,7 +376,7 @@
 		    left: 50%;
 		    transform: translate3d(
 		    	50%, 0, 0);
-		    background-color: #FFFFFF;
+		    background-color: white;
 		    pointer-events: auto;
 		}
 
@@ -392,7 +390,7 @@
 				 transform: rotate(0deg);
 			}
 			 100% {
-				 transform: rotate(-180deg);
+				 transform: rotate(180deg);
 
 
 			}
@@ -444,22 +442,13 @@
 
      /*share slide*/
 
-     	.shutters-share {
-		 position: absolute;
-		 height: 150vmax;
-		 width: 150vmax;
-		 left: calc(50% - 75vmax);
-		 top: calc(50% - 75vmax);
-		 pointer-events: none;
-		 z-index: 2;
-		 animation: rotateFrame 8s linear;
-		background-color: black
-		 transform: translate3d(-50%, 0, 0);
-	 background-color: #b3401a;
-	 pointer-events: auto;
-	 display: none;
-	    }
+
+
+
 	
+
+
+     	
 
 
 
@@ -472,9 +461,10 @@
             background-color: #FFFFFF;
             mix-blend-mode: normal;
             backdrop-filter: blur(30px);
-            z-index: 222;
-            transform: translateX(-100%); 
-            transition:  transform 1s ease-out;
+            z-index: -1;
+            opacity: 0;
+            animation: bgInOut 5s;
+            transition:  transform 3s ease-out;
         }
         
         .share-slide .close-icon
@@ -507,6 +497,7 @@
             color: #1D3138;
             margin-bottom:  min(4vw,3vh);
             transform: translateX(-80%);
+            opacity: 0;
             transition:  transform 1s ease-out;
 
             
@@ -518,6 +509,7 @@
             margin-bottom:  min(4vw,4vh);
             margin-top: 30%;
             transform: translateX(-80%);
+            opacity: 0;
             transition:  transform 1s ease-out;
         }
 
@@ -532,6 +524,7 @@
             
             justify-content: center;
             transform: translateX(-40%);
+            opacity: 0;
             transition:  transform 1s ease-out;
             
         }
@@ -561,6 +554,7 @@
         .qr-code-container
         {
             transform: translateX(-80%);
+            opacity: 0;
             transition:  transform 1s ease-out;
         }
         .qr-code-container img
@@ -572,7 +566,14 @@
         }
 
         .open{
+        	z-index: 2;
+            opacity: 1;
+        }
+        .openx{
+             z-index: 1;
+             opacity: 1;
             transform: translateX(0%);
+
         }
         .closeAnim
         {
@@ -580,14 +581,21 @@
             transform: rotateZ(180deg);
            
         }
+        .none
+        {
+        	display: none;
+        }
+
 
 /*share slide END*/
 
 	</style>
 </head>
 <body>
-
-	 <div class="share-slide" id="share-slide">
+ 
+    <div class="slide-wrapper" style="position: absolute;height: 100%;width: 100%;overflow-x: hidden;"> <!--  share screen  -->
+    
+       <div class="share-slide" id="share-slide">
         <img src="closeicon.png" alt="close-icon"  class="close-icon" onclick="closeSlide()"  />
         <div class="share-slide-share-icons">
             <h2 class="share-headline">SHARE MY CARD</h2>
@@ -612,10 +620,10 @@
 
 
 
-<div class="untitled__shutters"></div>
+<div class="untitled__shutters"></div> <!--  animation white  -->
 
-<div class="shutters-share"></div>
- <div class="card-wrapper" style="overflow: hidden;">
+
+ <div class="card-wrapper" style="overflow: hidden;"> <!--  contact card wrapper  -->
  
 
  	<div class="share-btn" onclick="openSlide()">
@@ -698,7 +706,12 @@
 
  	</form>
  	
- </div>
+ </div>	
+
+</div>
+
+
+	 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
  <script type="text/javascript">
@@ -710,27 +723,31 @@
 
 
  	function openSlide() {
-    $(".share-slide").addClass("open")
-    $(".icon-grid").addClass("open").delay(500);
-    $(".share-headline").addClass("open").delay(500);
-    $(".scan-and-save-txt").addClass("open").delay(500);
-    $(".qr-code-container").addClass("open").delay(500);
-    $(".close-icon").removeClass("closeAnim");
-
-
-
-   
-    $('#target_element').addClass('animate_class_name');
+ 	
+ 		  $('.untitled__shutters').fadeIn('slow');
+ 		   $(".share-slide").addClass("open");
+ 
+    setTimeout(function() {
+	   
+	    $(".icon-grid").addClass("openx");
+	    $(".share-headline").addClass("openx");
+	    $(".scan-and-save-txt").addClass("openx");
+	    $(".qr-code-container").addClass("openx");
+	    $(".close-icon").removeClass("closeAnim");
+        $('.untitled__shutters').fadeOut('fast');
+     }, 1000);
+  
+  
 
 
     }
 
     function closeSlide() {
     $(".share-slide").removeClass("open")
-    $(".icon-grid").removeClass("open").delay(500);
-    $(".share-headline").removeClass("open").delay(500);
-    $(".scan-and-save-txt").removeClass("open").delay(500);
-    $(".qr-code-container").removeClass("open").delay(500);
+    $(".icon-grid").removeClass("openx");
+    $(".share-headline").removeClass("openx");
+    $(".scan-and-save-txt").removeClass("openx");
+    $(".qr-code-container").removeClass("openx");
     $(".close-icon").addClass("closeAnim").delay(1000);
     }
 
