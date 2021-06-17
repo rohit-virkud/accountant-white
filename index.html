@@ -3,7 +3,7 @@
 <head>
 	<title>Accountant</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -12,10 +12,10 @@
 			font-family: 'Roboto', sans-serif;
 		}
 		html, body{
-	width: 100vw;
-	height: 100vh;
-	overflow-x: hidden;
-}
+	        width: 100vw;
+	        height: 100vh;
+	        overflow-x: hidden;
+        }
 		a{
 			text-decoration: none;
 			color: black;
@@ -23,6 +23,105 @@
 		h1,p{
 			word-break: break-word;
 		}
+
+		/*Loader*/
+
+		.loader-div {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: white;
+        text-align: center;
+        z-index: 999;
+        
+        
+        }
+
+        .loader-div h1 {
+        margin: 0;
+        padding: 0;
+       
+        font-weight: 300;
+        font-size: 4vw;
+        color: black;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        .loader-div h1 span {
+        position: relative;
+        top: 0.63em;  
+        display: inline-block;
+        text-transform: uppercase;  
+        opacity: 0;
+        transform: rotateX(-90deg);
+        
+        }
+
+        .loader-div h1  .let1 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.2s;
+        }
+
+        .loader-div h1  .let2 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.3s;
+        }
+
+        .loader-div h1  .let3 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.4s;
+        }
+
+        .loader-div h1  .let4 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.5s;
+
+        }
+
+        .loader-div h1  .let5 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.6s;
+        }
+
+        .loader-div h1  .let6 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.7s;
+        }
+
+        .loader-div h1 .let7 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.8s;
+        }
+
+        @keyframes drop {
+            10% {
+                opacity: 0.5;
+            }
+            20% {
+                opacity: 1;
+                top: 3.78em;
+                transform: rotateX(-360deg);
+            }
+            80% {
+                opacity: 1;
+                top: 3.78em;
+                transform: rotateX(-360deg);
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+                top: 6.94em
+            }
+        }
+
+
+
+		/**/
 
 
 		.card-wrapper
@@ -75,7 +174,7 @@
 		}
 		.logo-wrapper
 		{
-		   margin-top: min(6vw,3vh);
+		   margin-top:min(7vw,3.5vh);
            background-color: black;
            height: min(35vw,17.5vh);
            width: min(35vw,17.5vh);
@@ -144,7 +243,7 @@
 			border-radius: min(6.039vw,3vh);
 			color:black;
 			font-style: normal;
-			font-weight: 300;
+			font-weight: 400;
 
 			font-size: min(4vw,2vh);
 			text-decoration: none;
@@ -157,7 +256,7 @@
 			display: flex;
 		    flex-shrink: 0;
 		    justify-content: center;
-		    margin-top: min(1.5vw,0.8vh);
+		    margin-top: min(1vw,0.5vh);
 		    margin-bottom: min(1.5vw,0.8vh);
 		}
 
@@ -185,12 +284,12 @@
 		.contact-box
 		{
 			width: 80%;
-			padding-top: min(4vw,2vh);
+			padding-top: min(3vw,1.5vh);
 			padding-bottom: min(10vw,6vh);
 			background: #FFFFFF;
 			box-shadow: 0px 4px 20px rgba(86, 84, 84, 0.15);
 			border-radius: min(6vw,3vh);
-			margin-top: min(3vw,1.5vh);
+			margin-top: min(2vw,1vh);
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -501,9 +600,9 @@
             font-size: min(5vw,2.5vh);
             color: #1D3138;
             margin-bottom:  min(4vw,3vh);
-            transform: translateX(-80%);
+          
             opacity: 0;
-            transition:  transform 1s ease-out;
+            
 
             
         }
@@ -513,9 +612,9 @@
             color: #1D3138;
             margin-bottom:  min(4vw,4vh);
             margin-top: 30%;
-            transform: translateX(-80%);
+           
             opacity: 0;
-            transition:  transform 1s ease-out;
+            
         }
 
 
@@ -528,9 +627,9 @@
             grid-gap: min(2vw,1vh);
             
             justify-content: center;
-            transform: translateX(-40%);
+           
             opacity: 0;
-            transition:  transform 1s ease-out;
+           
             
         }
         .icon-grid a
@@ -558,7 +657,7 @@
         }
         .qr-code-container
         {
-            transform: translateX(-80%);
+            
             opacity: 0;
             transition:  transform 1s ease-out;
         }
@@ -578,7 +677,7 @@
         .openx{
              z-index: 1;
              opacity: 1;
-            transform: translateX(0%);
+           
 
         }
         .closeAnim
@@ -600,6 +699,18 @@
 	</style>
 </head>
 <body>
+
+	<div class="loader-div">
+        <h1>
+            <span class="let1">l</span>  
+            <span class="let2">o</span>  
+            <span class="let3">a</span>  
+            <span class="let4">d</span>  
+            <span class="let5">i</span>  
+            <span class="let6">n</span>  
+            <span class="let7">g</span>  
+          </h1>
+    </div>
  
     <div class="slide-wrapper" style="position: absolute;height: 100%;width: 100%;overflow-x: hidden;"> <!--  share screen  -->
 
@@ -726,16 +837,33 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
  <script type="text/javascript">
+
+ 	$('.untitled__shutters').fadeOut('fast');
+
+    /*Loader*/
+ 	setTimeout(function() {
+
+        $('.loader-div').fadeOut();
+      }, 2000);
+     
  	
+
+    /*shutters*/
+ 	
+
+ 	setTimeout(function() {
+    $('.untitled__shutters').fadeIn('fast');
+     }, 1800);
+
  	setTimeout(function() {
     $('.untitled__shutters').fadeOut('fast');
-     }, 1000);
+     }, 2800);
 
-
+   setTimeout(function() {
  	$('.card-wrapper').addClass('card-wrapper-anim');
+   },3000);   
 
 
-   
     function saveClicked()
     {
     	var audio = document.getElementById("save");
@@ -747,18 +875,27 @@
 
  	function openSlide() {
  	
- 		  $('.untitled__shutters').fadeIn('slow');
- 		  $(".share-slide").addClass("open");
- 		  $('.share-slide').addClass('card-wrapper-anim');
- 		  $('.card-wrapper').removeClass('card-wrapper-anim');
- 		  var audio = document.getElementById("share");
-          audio.play();
+ 	$('.untitled__shutters').fadeIn('slow');
+   
+ 	
+ 	$('.card-wrapper').removeClass('card-wrapper-anim');
+ 	var audio = document.getElementById("share");
+    audio.play();
+
+        
  
+
     setTimeout(function() {
-	    $(".icon-grid").addClass("openx");
+    	$(".share-slide").addClass("open");
+        $('.share-slide').addClass('card-wrapper-anim');
+        $(".icon-grid").addClass("openx");
 	    $(".share-headline").addClass("openx");
 	    $(".scan-and-save-txt").addClass("openx");
 	    $(".qr-code-container").addClass("openx");
+    },500)
+
+    setTimeout(function() {
+	   
 	    $(".close-icon").removeClass("closeAnim");
         $('.untitled__shutters').fadeOut('fast');
         
@@ -775,6 +912,7 @@
     audio.play();
 
     $('.untitled__shutters').fadeIn('fast');
+     $('.share-slide').removeClass('card-wrapper-anim');
     setTimeout(function() {
     $(".share-slide").removeClass("open")
     },300)
@@ -791,6 +929,14 @@
     $('.untitled__shutters').fadeOut('fast');
     },1000);
     }
+
+
+
+
+    
+       
+
+   
 
 
  </script>
