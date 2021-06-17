@@ -174,7 +174,7 @@
 		}
 		.logo-wrapper
 		{
-		   margin-top:min(7vw,3.5vh);
+		   margin-top:min(8vw,4vh);
            background-color: black;
            height: min(35vw,17.5vh);
            width: min(35vw,17.5vh);
@@ -373,16 +373,16 @@
 		}
 		.input-title, .input-button
 		{
-			    margin-left: min(15vw,7.5vh);
-	    	    margin-left: min(15vw,7.5vh);
+			margin-left: min(15vw,7.5vh);
+	    	margin-left: min(15vw,7.5vh);
             background: #FFFFFF;
-       border-radius: 4px;
-    margin-top: min(4vw,2vh);
-    padding: min(4vw,2vh);
-    font-size: min(3vw,1.5vh);
-    border: none;
-    width: 80%;
-    border-radius: 1.5vw;
+            border-radius: 4px;
+            margin-top: min(4vw,2vh);
+		    padding: min(4vw,2vh);
+		    font-size: min(3vw,1.5vh);
+		    border: none;
+		    width: 80%;
+		    border-radius: 1.5vw;
 		}
 		.input-button
 		{
@@ -745,7 +745,7 @@
 <div class="untitled__shutters"></div> <!--  animation white  -->
 
 
- <div class="card-wrapper card-wrapper-anim" style="overflow: hidden;"> <!--  contact card wrapper  -->
+ <div class="card-wrapper" style="overflow: hidden;"> <!--  contact card wrapper  -->
  
 
  	<div class="share-btn" onclick="openSlide()">
@@ -842,8 +842,7 @@
 
     /*Loader*/
  	setTimeout(function() {
-
-        $('.loader-div').fadeOut();
+      $('.loader-div').fadeOut();
       }, 2000);
      
  	
@@ -861,7 +860,7 @@
 
    setTimeout(function() {
  	$('.card-wrapper').addClass('card-wrapper-anim');
-   },3000);   
+   },1900);   
 
 
     function saveClicked()
@@ -882,9 +881,6 @@
  	var audio = document.getElementById("share");
     audio.play();
 
-        
- 
-
     setTimeout(function() {
     	$(".share-slide").addClass("open");
         $('.share-slide').addClass('card-wrapper-anim');
@@ -895,10 +891,8 @@
     },500)
 
     setTimeout(function() {
-	   
 	    $(".close-icon").removeClass("closeAnim");
         $('.untitled__shutters').fadeOut('fast');
-        
      }, 1000);
   
   
